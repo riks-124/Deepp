@@ -1,0 +1,176 @@
+/* --- Basic Reset and Fonts --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padded {
+    padding: 60px 0;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h2 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- Hero Section Styling --- */
+.hero-section {
+    background-color: #007bff; /* A nice blue for trust */
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* The style for the buttons */
+.cta-button {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #28a745; /* Green for action/safety */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+}
+
+/* --- Services & Process Grid Layout --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card, .step {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.bg-light {
+    background-color: #f4f7f9;
+}
+
+/* --- MODAL STYLES --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity (overlay) */
+    backdrop-filter: blur(5px); /* Nice blurry background effect */
+    justify-content: center; /* Center the modal content horizontally */
+    align-items: center; /* Center the modal content vertically */
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    max-height: 90vh; /* Prevent modal from going off-screen on mobile */
+    overflow-y: auto; /* Add scrolling if form is long on mobile */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* --- Form Styling --- */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+#form-message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* --- Footer Styling --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* --- Basic Responsiveness (Handles Mobile/Tablet Views) --- */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+}
+

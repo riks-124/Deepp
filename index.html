@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Essential for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProData Recovery Services</title>
+    <!-- Links the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Import Google Font for elegance -->
+    <link href="fonts.googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1>Lost Your Data? We Can Recover It.</h1>
+            <p>Fast, secure, and professional data recovery services for hard drives, SSDs, and more.</p>
+            <button id="open-contact-modal" class="cta-button">Get a Free Evaluation Now</button>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padded">
+        <div class="container">
+            <h2>Our Expertise</h2>
+            <div class="grid-container">
+                <div class="service-card">
+                    <h3>Hard Drives</h3>
+                    <p>Recovery from mechanical failure, accidental formats, and bad sectors.</p>
+                </div>
+                <div class="service-card">
+                    <h3>SSDs & USB</h3>
+                    <p>Solutions for electronic failure, chip-off recovery, and deleted files.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Raid Servers</h3>
+                    <p>Expert recovery for complex business server configurations and setups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section-padded bg-light">
+        <div class="container">
+            <h2>Our Simple Process</h2>
+            <div class="grid-container steps-container">
+                <div class="step">
+                    <h3>1. Ship Drive</h3>
+                    <p>Securely package and send us your failed device.</p>
+                </div>
+                <div class="step">
+                    <h3>2. Free Eval</h3>
+                    <p>We perform a diagnostic and provide a fixed-price quote.</p>
+                </div>
+                <div class="step">
+                    <h3>3. Recover Data</h3>
+                    <p>Our experts recover your data in a secure lab environment.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                 <button id="open-contact-modal-footer" class="cta-button">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Contact Modal/Pop-up -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Contact Us Today</h2>
+            <p>Fill out the form below to start your free evaluation, or call us at +91-9876543210.</p>
+            <form id="contact-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <label for="device">Device Type (HDD, SSD, USB, etc.)</label>
+                <input type="text" id="device" name="device" required>
+                <label for="issue">Describe the Issue</label>
+                <textarea id="issue" name="issue" rows="4" required></textarea>
+                <button type="submit" class="cta-button">Send Request</button>
+            </form>
+            <div id="form-message"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ProData Recovery Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Links the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
+
