@@ -18,6 +18,27 @@
     * {
       box-sizing: border-box
     }
+    <!-- WhatsApp Floating Button -->
+<a id="whatsappBtn" href="#" target="_blank" style="
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+z-index:99999;
+">
+💬
+</a>
+
 
     body {
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
@@ -333,51 +354,76 @@
   </div>
 
   <!-- CONTACT MODAL -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeContact()">&times;</span>
-      <h2>Contact Shikhar</h2>
+  <!-- CONTACT MODAL -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeContact()">&times;</span>
+    <h2>Contact Shikhar</h2>
 
-      <input placeholder="Your Name" class="input">
-      <input placeholder="Email Address" class="input">
-      <input placeholder="Phone Number" class="input">
-      <input placeholder="Device (e.g. Windows laptop)" class="input">
-      <textarea placeholder="Short Description" rows="4" class="input"></textarea>
+    <p class="small">
+      📞 <strong>Instant help:</strong> Chat on WhatsApp<br>
+      📝 <strong>Detailed request:</strong> Fill Google Form
+    </p>
 
-      <button class="btn" onclick="window.open('YOUR_GOOGLE_FORM_LINK_HERE', '_blank')">
-        Submit Full Form
-      </button>
-    </div>
+    <button class="btn" style="margin-top:12px"
+      onclick="openWhatsAppFromContact()">
+      Chat on WhatsApp
+    </button>
+
+    <button class="btn ghost" style="margin-top:10px"
+      onclick="window.open('YOUR_GOOGLE_FORM_LINK_HERE','_blank')">
+      Submit Recovery Request Form
+    </button>
   </div>
+</div>
+
 
   <footer>
     © <span id="year"></span> Datarecovery · Built by Shikhar · <span class="small">Static demo site</span>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    function openHow() {
-      document.getElementById('howModal').style.display = 'block';
-    }
+  const WHATSAPP_NUMBER = "919XXXXXXXXX"; // no +
+  const GOOGLE_FORM_LINK = "https://docs.google.com/forms/d/e/XXXX/viewform";
 
-    function closeHow() {
-      document.getElementById('howModal').style.display = 'none';
-    }
+  function openHow() {
+    document.getElementById('howModal').style.display = 'block';
+  }
 
-    function openContact() {
-      document.getElementById('contactModal').style.display = 'block';
-    }
+  function closeHow() {
+    document.getElementById('howModal').style.display = 'none';
+  }
 
-    function closeContact() {
-      document.getElementById('contactModal').style.display = 'none';
-    }
+  function openContact() {
+    document.getElementById('contactModal').style.display = 'block';
+  }
 
-    window.onclick = function (event) {
-      if (event.target == document.getElementById('howModal')) closeHow();
-      if (event.target == document.getElementById('contactModal')) closeContact();
-    }
-  </script>
+  function closeContact() {
+    document.getElementById('contactModal').style.display = 'none';
+  }
+
+  window.onclick = function (event) {
+    if (event.target == document.getElementById('howModal')) closeHow();
+    if (event.target == document.getElementById('contactModal')) closeContact();
+  }
+
+  // WhatsApp setup
+  const message = encodeURIComponent(
+    "Hi Shikhar, I need help with data recovery. Device details:"
+  );
+
+  document.getElementById("whatsappBtn").href =
+    "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message;
+
+  function openWhatsAppFromContact() {
+    window.open(
+      "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message,
+      "_blank"
+    );
+  }
+</script>
 
 </body>
 </html>
