@@ -967,7 +967,7 @@ p.lead {
   .blog-grid,
   .video-grid {
     grid-template-columns: 1fr;
-  }
+  } 
 
   .blog-header h2,
   .video-header h2 {
