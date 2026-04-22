@@ -4,33 +4,70 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Datarecovery — fast, secure file recovery and support" />
-  <title>Datarecovery · Shikhar</title>
+  <meta name="description" content="Deepp Data Recovery - Fast, secure, and privacy-focused file recovery services. 98% success rate. Free DIY guides & professional support." />
+  <meta name="keywords" content="data recovery, file recovery, hard drive recovery, SSD recovery, deleted files" />
+  <meta name="author" content="Deepp Data Recovery" />
+  <meta name="theme-color" content="#0ea5a4" />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Deepp Data Recovery - Recover Lost Files Securely" />
+  <meta property="og:description" content="Professional data recovery with 98% success rate. Privacy-first approach, no file uploads required." />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Deepp Data Recovery",
+    "url": "https://datarecovery.example.com",
+    "description": "Fast, secure, privacy-focused data recovery services",
+    "areaServed": "Worldwide",
+    "contactType": "Customer Service"
+  }
+  </script>
 
-  <!-- External stylesheet -->
-  <link rel="stylesheet" href="assets/styles.css">
+  <title>Deepp Data Recovery - Fast & Secure File Recovery | 98% Success Rate</title>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="parallax-bg" id="parallaxBg"></div>
 
   <header class="container">
     <div class="logo">
       <div class="logo-mark">DR</div>
       <div>
         <div style="font-weight:800">Datarecovery</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:3px">Built by Shikhar</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px"> </div>
       </div>
     </div>
 
     <nav>
-      <a onclick="openHow()">How it works</a>
-      <a onclick="openContact()">Contact</a>
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#features" onclick="closeMenu()">Features</a>
+      <a href="#stats" onclick="closeMenu()">Stats</a>
+      <a href="#testimonials" onclick="closeMenu()">Testimonials</a>
+      <a href="#pricing" onclick="closeMenu()">Pricing</a>
+      <a href="#blog" onclick="closeMenu()">Blog</a>
+      <a href="#videos" onclick="closeMenu()">Videos</a>
+      <a href="#faq" onclick="closeMenu()">FAQ</a>
+      <a onclick="openHow(); closeMenu()">How it works</a>
+      <a onclick="openContact(); closeMenu()">Contact</a>
     </nav>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <main class="container">
 
-    <section class="hero">
+    <section class="hero" id="home">
       <div>
         <div class="eyebrow">Reliable • Secure • Fast</div>
         <h1>Recover lost files & restore confidence.</h1>
@@ -53,7 +90,12 @@
 
         <div class="grid-3" id="features">
           <div class="card feature">
-            <div class="ico">🔒</div>
+            <div class="ico">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
             <div>
               <div style="font-weight:700">Privacy-first</div>
               <div class="small">All operations can be done locally — no file uploads required.</div>
@@ -61,7 +103,11 @@
           </div>
 
           <div class="card feature">
-            <div class="ico">⚡</div>
+            <div class="ico">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
             <div>
               <div style="font-weight:700">Guided tools</div>
               <div class="small">Step-by-step instructions, downloadable scripts, and tips to maximize success.</div>
@@ -69,7 +115,12 @@
           </div>
 
           <div class="card feature">
-            <div class="ico">📚</div>
+            <div class="ico">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
             <div>
               <div style="font-weight:700">Documentation</div>
               <div class="small">Clear guides for Windows, macOS, and Linux recoveries.</div>
@@ -98,6 +149,359 @@
       </aside>
     </section>
 
+    <!-- STATS SECTION -->
+    <section class="stats-section" id="stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-target="50000">0</div>
+          <div class="stat-label">+ Files Recovered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="98">0</div>
+          <div class="stat-label">% Success Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="15000">0</div>
+          <div class="stat-label">+ Happy Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="24">0</div>
+          <div class="stat-label">Hour Support</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="testimonials-header">
+        <h2>Success Stories</h2>
+        <p class="testimonials-subtitle">See how we've helped businesses and individuals recover their precious data</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">JM</div>
+            <div>
+              <div class="testimonial-name">John Martinez</div>
+              <div class="testimonial-role">Small Business Owner</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Lost 10 years of business data due to hard drive failure. Deepp recovered 99.8% of my files within 48 hours. Absolute lifesaver!"</p>
+          <div class="testimonial-stats">
+            <span class="stat-badge">📁 2.3 TB Recovered</span>
+            <span class="stat-badge">⏱️ 48 Hours</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">SR</div>
+            <div>
+              <div class="testimonial-name">Sarah Robinson</div>
+              <div class="testimonial-role">Freelance Designer</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Accidentally deleted my entire portfolio. The step-by-step guide helped me recover everything myself. Thank you!"</p>
+          <div class="testimonial-stats">
+            <span class="stat-badge">🎨 Design Files</span>
+            <span class="stat-badge">✅ DIY Recovery</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">DP</div>
+            <div>
+              <div class="testimonial-name">David Park</div>
+              <div class="testimonial-role">IT Manager</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Privacy-focused approach is exactly what we needed. No data leaves our servers. Highly recommended for enterprises."</p>
+          <div class="testimonial-stats">
+            <span class="stat-badge">🔒 On-Premise</span>
+            <span class="stat-badge">💼 Enterprise</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+      <div class="pricing-header">
+        <h2>Transparent Pricing</h2>
+        <p class="pricing-subtitle">Choose the right plan for your data recovery needs</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-badge">Popular</div>
+          <div class="pricing-tier">DIY Recovery</div>
+          <div class="pricing-price">Free</div>
+          <p class="pricing-description">Perfect for self-guided recovery</p>
+          <ul class="pricing-features">
+            <li>✓ Step-by-step guides</li>
+            <li>✓ Recovery tool downloads</li>
+            <li>✓ Community support</li>
+            <li>✓ Email assistance</li>
+          </ul>
+          <button class="btn" style="width: 100%; margin-top: 20px;">Get Started</button>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-badge featured-badge">Best Value</div>
+          <div class="pricing-tier">Professional</div>
+          <div class="pricing-price">$299</div>
+          <p class="pricing-description">Expert assistance included</p>
+          <ul class="pricing-features">
+            <li>✓ Professional diagnosis</li>
+            <li>✓ Remote guidance</li>
+            <li>✓ Priority support</li>
+            <li>✓ Data integrity check</li>
+            <li>✓ Up to 5 TB recovery</li>
+          </ul>
+          <button class="btn" style="width: 100%; margin-top: 20px;">View Pricing PDF</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-badge">Enterprise</div>
+          <div class="pricing-tier">Corporate</div>
+          <div class="pricing-price">Custom</div>
+          <p class="pricing-description">Enterprise-grade solutions</p>
+          <ul class="pricing-features">
+            <li>✓ Dedicated support</li>
+            <li>✓ On-premise deployment</li>
+            <li>✓ SLA guarantees</li>
+            <li>✓ Custom solutions</li>
+            <li>✓ Unlimited recovery</li>
+          </ul>
+          <button class="btn ghost" style="width: 100%; margin-top: 20px;" onclick="openContact()">Contact Us</button>
+        </div>
+      </div>
+
+      <div class="pricing-cta">
+        <p>Need more details? <a href="/home/shikhar/DataRecoveryWebsite/Data_Recovery_Charges_Price_List_v1.pdf" target="_blank" style="color: var(--accent); font-weight: 600;">Download our full pricing guide</a></p>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+      <div class="faq-header">
+        <h2>Frequently Asked Questions</h2>
+        <p class="faq-subtitle">Everything you need to know about data recovery</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-category">
+          <h3 class="faq-category-title">General Topics</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What is data recovery?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Data recovery is the process of retrieving inaccessible data from storage media, whether due to hardware failure, accidental deletion, corruption, or other issues. Our service helps recover your important files safely.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>How long does recovery take?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Recovery time depends on the severity of the issue and data size. DIY recovery can take hours, while professional services typically complete within 24-48 hours. Enterprise solutions have custom timelines based on your needs.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What devices can be recovered?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We support recovery from hard drives, SSDs, USB drives, memory cards, external drives, RAID systems, and more. Guides are available for Windows, macOS, and Linux systems.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Is my data really private?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Our privacy-first approach means all operations can be done locally without uploading your files. For enterprise customers, we offer on-premise deployment to ensure complete data control.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-category">
+          <h3 class="faq-category-title">Technical Questions</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What causes data loss?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Common causes include accidental deletion, hardware failure, software corruption, malware/ransomware, unexpected power loss, physical damage, and formatting errors. The cause determines the recovery method.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Can I recover data after formatting?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, formatted data can often be recovered if the physical storage hasn't been overwritten. The sooner you attempt recovery, the higher the success rate. Our tools are designed for this specific scenario.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What if my drive makes strange sounds?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Strange sounds indicate potential hardware failure. STOP using the device immediately and avoid power cycling. Contact our professionals for guidance. Continuing to use the drive may cause permanent damage.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What is the success rate?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our success rate is 98% for logical failures and 85% for physical damage cases. Success depends on the type and severity of the issue. We provide a free diagnosis to assess your specific situation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-category">
+          <h3 class="faq-category-title">Pricing & Services</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Do you offer a free assessment?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! We provide free diagnosis for professional services. We'll assess your device and provide an estimated recovery time and cost before you commit to the service.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What happens if recovery fails?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If we cannot recover your data, you're not charged. Our "No Data, No Fee" guarantee means you only pay if we successfully recover your files. Professional and enterprise plans include this assurance.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Can I get a custom plan for my business?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely! Our Corporate plan is fully customizable for your organization's specific needs. Contact our sales team to discuss SLA guarantees, dedicated support, and enterprise features.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG/NEWS SECTION -->
+    <section class="blog-section" id="blog">
+      <div class="blog-header">
+        <h2>Latest Recovery Tips & News</h2>
+        <p class="blog-subtitle">Stay updated with data recovery insights and best practices</p>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-date">Apr 15, 2026</div>
+          <h3>5 Common Data Loss Mistakes to Avoid</h3>
+          <p>Learn the most common mistakes people make after data loss and how to prevent them. Early action increases recovery chances by 40%.</p>
+          <a href="#" class="blog-link">Read more →</a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-date">Apr 10, 2026</div>
+          <h3>SSD vs HDD Recovery: What's Different?</h3>
+          <p>Understanding the differences between SSD and HDD recovery methods. We break down the technical challenges and solutions.</p>
+          <a href="#" class="blog-link">Read more →</a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-date">Apr 5, 2026</div>
+          <h3>Ransomware Recovery Guide for Businesses</h3>
+          <p>A comprehensive guide on recovering from ransomware attacks. Includes step-by-step recovery procedures and prevention tips.</p>
+          <a href="#" class="blog-link">Read more →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- VIDEO GUIDES SECTION -->
+    <section class="video-section" id="videos">
+      <div class="video-header">
+        <h2>Video Guides</h2>
+        <p class="video-subtitle">Watch step-by-step recovery tutorials</p>
+      </div>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-placeholder">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Play Video</span>
+          </div>
+          <h3>Getting Started with DIY Recovery</h3>
+          <p>Learn the basics of data recovery and when to seek professional help. Duration: 8 min</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-placeholder">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Play Video</span>
+          </div>
+          <h3>Recovering from Accidental Deletion</h3>
+          <p>Step-by-step guide for recovering deleted files from various storage devices. Duration: 12 min</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-placeholder">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Play Video</span>
+          </div>
+          <h3>Drive Cloning Best Practices</h3>
+          <p>Learn the safest way to clone your drive before attempting deep recovery. Duration: 10 min</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter-section">
+      <div class="newsletter-content">
+        <h2>Stay Updated</h2>
+        <p>Get the latest recovery tips, security updates, and exclusive offers delivered to your inbox.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email" class="newsletter-input">
+          <button class="btn" style="white-space: nowrap;">Subscribe</button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- HOW IT WORKS MODAL -->
@@ -118,36 +522,27 @@
   <div id="contactModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeContact()">&times;</span>
-      <h2>Contact Shikhar</h2>
+      <h2>Contact Our Data Recovery Experts</h2>
 
-      <p class="small">
-        📞 <strong>Instant help:</strong> Chat on WhatsApp<br>
-        📝 <strong>Detailed request:</strong> Fill Google Form
-      </p>
+      <input placeholder="Your Name" class="input" aria-label="Name">
+      <input placeholder="Email Address" type="email" class="input" aria-label="Email">
+      <input placeholder="Phone Number" type="tel" class="input" aria-label="Phone">
+      <input placeholder="Device (e.g. Windows laptop)" class="input" aria-label="Device type">
+      <textarea placeholder="Short Description" rows="4" class="input" aria-label="Description"></textarea>
 
-      <button class="btn" style="margin-top:12px"
-        onclick="openWhatsAppFromContact()">
-        Chat on WhatsApp
-      </button>
-
-      <button class="btn ghost" style="margin-top:10px"
-        onclick="window.open(GOOGLE_FORM_LINK,'_blank')">
-        Submit Recovery Request Form
+      <button class="btn" onclick="window.open('YOUR_GOOGLE_FORM_LINK_HERE', '_blank')">
+        Submit Full Form
       </button>
     </div>
   </div>
 
-
-  <footer>
-    © <span id="year"></span> Datarecovery · Built by Shikhar · <span class="small">Static demo site</span>
+  <footer role="contentinfo">
+    © <span id="year"></span> Deepp Data Recovery <span class="small">Privacy-First Recovery Solutions</span>
   </footer>
 
-  <!-- WhatsApp Floating Button (moved out of the CSS block) -->
-  <a id="whatsappBtn" href="#" target="_blank" aria-label="Chat on WhatsApp">
-    💬
-  </a>
+  <!-- External Script -->
+  <script src="script.js"></script>
 
-  <!-- External script -->
-  <script src="assets/scripts.js" defer></script>
 </body>
 </html>
+
