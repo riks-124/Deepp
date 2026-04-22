@@ -1,62 +1,118 @@
-// Configuration
-const WHATSAPP_NUMBER = "919936648011"; // no +
-const GOOGLE_FORM_LINK = "https://docs.google.com/forms/d/e/XXXX/viewform";
+// Set current year in footer
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-// Set page year
-document.addEventListener('DOMContentLoaded', function () {
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-});
+  // --- Mobile Menu Toggle ---
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const nav = document.querySelector('nav');
+  
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
 
-// Modal controls and contact handlers (kept as globals so inline onclick handlers work)
-function openHow() {
-  const el = document.getElementById('howModal');
-  if (el) el.style.display = 'block';
-}
+    // Close menu when a link is clicked
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+      });
+    });
+  }
 
-function closeHow() {
-  const el = document.getElementById('howModal');
-  if (el) el.style.display = 'none';
-}
+  // --- Animated Counter Stats ---
+  const statNumbers = document.querySelectorAll('.stat-number');
+  let hasAnimated = false;
 
-function openContact() {
-  const el = document.getElementById('contactModal');
-  if (el) el.style.display = 'block';
-}
+  function animateCounters() {
+    if (hasAnimated) return;
+    hasAnimated = true;
 
-function closeContact() {
-  const el = document.getElementById('contactModal');
-  if (el) el.style.display = 'none';
-}
+    statNumbers.forEach(stat => {
+      const target = parseInt(stat.getAttribute('data-target'));
+      const duration = 2000; // 2 seconds
+      const startTime = Date.now();
 
-// WhatsApp setup and helpers
-const message = encodeURIComponent(
-  "Hi Shikhar, I need help with data recovery. Device details:"
-);
+      const updateCount = () => {
+        const now = Date.now();
+        const progress = (now - startTime) / duration;
 
-function buildWhatsappHref() {
-  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message;
-}
+        if (progress < 1) {
+          const current = Math.floor(progress * target);
+          stat.textContent = current.toLocaleString();
+          requestAnimationFrame(updateCount);
+        } else {
+          stat.textContent = target.toLocaleString();
+        }
+      };
 
-function openWhatsAppFromContact() {
-  window.open(buildWhatsappHref(), "_blank");
-}
+      updateCount();
+    });
+  }
 
-// Initialize whatsapp button href once DOM is ready
-document.addEventListener('DOMContentLoaded', function () {
-  const btn = document.getElementById("whatsappBtn");
-  if (btn) {
-    btn.href = buildWhatsappHref();
+  // Trigger animation when stats section is in view
+  const observerOptions = {
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) {
+    observer.observe(statsSection);
   }
 });
 
-// Close modals when clicking outside
+// --- Close Mobile Menu ---
+function closeMenu() {
+  const nav = document.querySelector('nav');
+  nav.classList.remove('active');
+}
+
+// --- Toggle FAQ accordion ---
+function toggleFaq(button) {
+  button.classList.toggle('active');
+  const answer = button.nextElementSibling;
+  answer.classList.toggle('active');
+}
+
+// --- Parallax scrolling effect ---
+const parallaxBg = document.getElementById('parallaxBg');
+if (parallaxBg) {
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+  });
+}
+
+// --- Modal Functions ---
+function openHow() {
+  document.getElementById('howModal').style.display = 'block';
+}
+
+function closeHow() {
+  document.getElementById('howModal').style.display = 'none';
+}
+
+function openContact() {
+  document.getElementById('contactModal').style.display = 'block';
+}
+
+function closeContact() {
+  document.getElementById('contactModal').style.display = 'none';
+}
+
+// Close modal when clicking outside of it
 window.onclick = function (event) {
   const howModal = document.getElementById('howModal');
   const contactModal = document.getElementById('contactModal');
   if (event.target === howModal) closeHow();
   if (event.target === contactModal) closeContact();
-};
+}
 
-// Expose GOOGLE_FORM_LINK for use in inline onclick
-window.GOOGLE_FORM_LINK = GOOGLE_FORM_LINK;
