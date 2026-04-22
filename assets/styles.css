@@ -65,7 +65,7 @@ html {
 }
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 /* --- Body & Main Background --- */
@@ -76,7 +76,7 @@ body {
   background: linear-gradient(-45deg, #071024, #0b1220, #0a1a2e, #0b1220);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
-  color: #e6eef6
+  color: #e6eef6;
 }
 
 @keyframes gradientShift {
@@ -110,7 +110,7 @@ header {
 .logo {
   display: flex;
   gap: 12px;
-  align-items: center
+  align-items: center;
 }
 
 .logo-mark {
@@ -121,7 +121,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 700
+  font-weight: 700;
 }
 
 nav a {
@@ -210,7 +210,7 @@ nav a:hover {
   padding: 6px 10px;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 13px
+  font-size: 13px;
 }
 
 h1 {
@@ -232,12 +232,12 @@ h2 {
 p.lead {
   color: var(--muted);
   font-size: 16px;
-  max-width: 60ch
+  max-width: 60ch;
 }
 
 .small {
   font-size: 13px;
-  color: var(--muted)
+  color: var(--muted);
 }
 
 /* --- Buttons & CTA --- */
@@ -245,7 +245,7 @@ p.lead {
   margin-top: 18px;
   display: flex;
   gap: 12px;
-  align-items: center
+  align-items: center;
 }
 
 .btn {
@@ -318,7 +318,7 @@ p.lead {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 40px
+  margin-top: 40px;
 }
 
 /* --- Stats Section --- */
@@ -1006,7 +1006,7 @@ footer {
   padding: 60px 20px;
   text-align: center;
   color: var(--muted);
-  font-size: 14px
+  font-size: 14px;
 }
 
 /* --- Modal Styles --- */
